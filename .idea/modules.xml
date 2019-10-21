@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/authorization-server/authorization-server.iml" filepath="$PROJECT_DIR$/authorization-server/authorization-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/central-gateway/central-gateway.iml" filepath="$PROJECT_DIR$/central-gateway/central-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/authorization-server/repository/repository.iml" filepath="$PROJECT_DIR$/authorization-server/repository/repository.iml" />
+      <module fileurl="file://$PROJECT_DIR$/authorization-server/server/server.iml" filepath="$PROJECT_DIR$/authorization-server/server/server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/authorization-server/service/service.iml" filepath="$PROJECT_DIR$/authorization-server/service/service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sting.iml" filepath="$PROJECT_DIR$/sting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/telegram-resource-server/telegram-repository/telegram-repository.iml" filepath="$PROJECT_DIR$/telegram-resource-server/telegram-repository/telegram-repository.iml" />
+      <module fileurl="file://$PROJECT_DIR$/telegram-resource-server/telegram-resource-server.iml" filepath="$PROJECT_DIR$/telegram-resource-server/telegram-resource-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/telegram-resource-server/telegram-server/telegram-server.iml" filepath="$PROJECT_DIR$/telegram-resource-server/telegram-server/telegram-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/telegram-resource-server/telegram-service/telegram-service.iml" filepath="$PROJECT_DIR$/telegram-resource-server/telegram-service/telegram-service.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,18 @@
+server:
+  port: 9992
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: pass
+    username: root
+    url: jdbc:mysql://localhost:3306/sting_authorization_server
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        current_session_context_clas: org.springframework.orm.hibernate5.SpringSessionContext
+    hibernate:
+      use-new-id-generator-mappings: false
