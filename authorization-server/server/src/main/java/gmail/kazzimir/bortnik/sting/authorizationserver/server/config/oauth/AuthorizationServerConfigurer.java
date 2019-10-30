@@ -1,6 +1,6 @@
 package gmail.kazzimir.bortnik.sting.authorizationserver.server.config.oauth;
 
-import gmail.kazzimir.bortnik.sting.authorizationserver.server.config.oauth.model.CustomerJwtAccessTokenConverter;
+import gmail.kazzimir.bortnik.sting.authorizationserver.server.config.oauth.component.CustomDefaultAccessTokenConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -25,21 +25,23 @@ import static gmail.kazzimir.bortnik.sting.authorizationserver.server.config.con
 @Configuration
 public class AuthorizationServerConfigurer extends AuthorizationServerConfigurerAdapter {
     @Value("${oauth.client.secret}")
-    private String string;
+    private String signingKey;
     private static final String TOKEN_KEY_ACCESS = "permitAll()";
     private static final String CHECK_TOKEN_ACCESS = "isAuthenticated()";
 
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
     private final DataSource dataSource;
+    private final CustomDefaultAccessTokenConverter customDefaultAccessTokenConverter;
 
     @Autowired
     public AuthorizationServerConfigurer(PasswordEncoder passwordEncoder,
                                          AuthenticationManager authenticationManager,
-                                         DataSource dataSource) {
+                                         DataSource dataSource, CustomDefaultAccessTokenConverter customDefaultAccessTokenConverter) {
         this.passwordEncoder = passwordEncoder;
         this.authenticationManager = authenticationManager;
         this.dataSource = dataSource;
+        this.customDefaultAccessTokenConverter = customDefaultAccessTokenConverter;
     }
 
     @Override
@@ -58,17 +60,20 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
         endpoints
                 .pathMapping(DEFAULT_PATH, CUSTOM_PATH)
                 .tokenStore(jdbcTokenStore())
-                .accessTokenConverter(jwtAccessTokenConverter())
+                .accessTokenConverter(accessTokenConverter())
                 .authenticationManager(authenticationManager);
+    }
+
+    @Bean
+    public JwtAccessTokenConverter accessTokenConverter() {
+        JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();
+        jwtAccessTokenConverter.setAccessTokenConverter(customDefaultAccessTokenConverter);
+        jwtAccessTokenConverter.setSigningKey(signingKey);
+        return jwtAccessTokenConverter;
     }
 
     @Bean
     public TokenStore jdbcTokenStore() {
         return new JdbcTokenStore(dataSource);
-    }
-
-    @Bean
-    public JwtAccessTokenConverter jwtAccessTokenConverter() {
-        return new CustomerJwtAccessTokenConverter(string);
     }
 }

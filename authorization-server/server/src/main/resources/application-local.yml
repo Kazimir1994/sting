@@ -16,3 +16,4 @@ spring:
         current_session_context_clas: org.springframework.orm.hibernate5.SpringSessionContext
     hibernate:
       use-new-id-generator-mappings: false
+      ddl-auto: validate

@@ -1,6 +1,9 @@
 package gmail.kazzimir.bortnik.sting.authorizationserver.service.model;
 
-public class PermissionDTO extends BaseDTO {
+import java.io.Serializable;
+
+public class PermissionDTO extends BaseDTO implements Serializable {
+    private static final long serialVersionUID = -6847751459271796643L;
     private String name;
 
     public String getName() {

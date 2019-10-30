@@ -98,6 +98,8 @@
         </insert>
     </changeSet>
 
+    <include file="classpath:migrations/db-sting-binding-roles-to-resource-servers-changelog.xml"/>
+
     <!--ROLES->ADMINISTRATOR_TELEGRAM_BOOT -->
     <changeSet id="INSERT_PERMISSION_|ROLES->ADMINISTRATOR_TELEGRAM_BOOT|_TABLE_1" author="kazzimirbortnik@gmail.com">
         <insert tableName="permission">
@@ -201,7 +203,7 @@
 
             <column name="refresh_token_validity" value="10000"/>
 
-            <column name="resource_ids" value="inventory,payment"/>
+            <!--            <column name="resource_ids" value="inventory,payment"/>-->
         </insert>
     </changeSet>
 
@@ -282,6 +284,5 @@
 
         </createTable>
     </changeSet>
-
 
 </databaseChangeLog>

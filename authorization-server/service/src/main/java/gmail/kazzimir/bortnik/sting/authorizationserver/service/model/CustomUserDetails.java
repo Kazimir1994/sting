@@ -20,7 +20,6 @@ public class CustomUserDetails extends AccountDTO implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
         super.getRoles().forEach(roleDTO -> {
-            grantedAuthorities.add(new SimpleGrantedAuthority(roleDTO.getName()));
             roleDTO.getPermissions().forEach(permissionDTO -> {
                 grantedAuthorities.add(new SimpleGrantedAuthority(permissionDTO.getName()));
             });

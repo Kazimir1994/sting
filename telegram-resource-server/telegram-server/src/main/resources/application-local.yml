@@ -4,10 +4,11 @@ security:
   oauth2:
     resource:
       token-info-uri: http://localhost:9992/oauth/check_token
+      id: TELEGRAM_RESOURCE
     client:
       client-id: authorization_server
       client-secret: secret
-      authorized-grant-types: password
+
 #spring:
 #  datasource:
 #    driver-class-name: com.mysql.cj.jdbc.Driver

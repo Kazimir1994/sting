@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class ControlerTest {
     private final static Logger logger = LoggerFactory.getLogger(ControlerTest.class);
 
-
     @GetMapping("/test")
     public ResponseEntity<Object> getArticles() {
 

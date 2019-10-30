@@ -11,3 +11,18 @@ services:
       - MYSQL_ROOT_PASSWORD=pass
     volumes:
       - ./mysql-data:/var/lib/mysql
+
+  mongo2:
+    image: mongo:latest
+    command: mongod --port 27077
+    container_name: mongoCentralGateway
+    ports:
+      - '27077:27077'
+    volumes:
+      - mongodb_data:/var/mongo/data
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongoCentralGateway
+      - MONGO_INITDB_ROOT_PASSWORD=qqq123wer
+
+volumes:
+  mongodb_data:

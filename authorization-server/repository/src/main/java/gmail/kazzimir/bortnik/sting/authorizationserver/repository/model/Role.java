@@ -21,6 +21,15 @@ public class Role extends BaseEntity {
                     name = "permission_id", referencedColumnName = "id"))
     private Collection<Permission> permission;
 
+    @ManyToMany
+    @JoinTable(
+            name = "access_resource_servers",
+            joinColumns = @JoinColumn(
+                    name = "roles_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(
+                    name = "identifier_id", referencedColumnName = "id"))
+    private Collection<ResourceServersIdentifier> resourceServersIdentifiers;
+
     public String getName() {
         return name;
     }
@@ -45,19 +54,27 @@ public class Role extends BaseEntity {
         this.permission = permission;
     }
 
+    public Collection<ResourceServersIdentifier> getResourceServersIdentifiers() {
+        return resourceServersIdentifiers;
+    }
+
+    public void setResourceServersIdentifiers(Collection<ResourceServersIdentifier> resourceServersIdentifiers) {
+        this.resourceServersIdentifiers = resourceServersIdentifiers;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Role role = (Role) o;
-        return getId().equals(role.getId()) &&
-                name.equals(role.name) &&
+        return name.equals(role.name) &&
                 account.equals(role.account) &&
-                permission.equals(role.permission);
+                permission.equals(role.permission) &&
+                resourceServersIdentifiers.equals(role.resourceServersIdentifiers);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), name, account, permission);
+        return Objects.hash(name, account, permission, resourceServersIdentifiers);
     }
 }

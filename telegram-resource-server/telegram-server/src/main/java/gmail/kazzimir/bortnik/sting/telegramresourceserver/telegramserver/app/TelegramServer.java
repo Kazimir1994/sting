@@ -13,4 +13,3 @@ public class TelegramServer {
         SpringApplication.run(TelegramServer.class, args);
     }
 }
-

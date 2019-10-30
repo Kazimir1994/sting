@@ -1,11 +1,21 @@
 gateway:
   routes:
-      authorization:
-       path: /authorization/**
-       url: http://localhost:9992
-      resources:
-        path: /resources/**
-        url: http://localhost:8089
+    authorization:
+      path: /authorization/**
+      url: http://localhost:9992
+    resources:
+      path: /resources/**
+      url: http://localhost:8089
 
 server:
   port: 9991
+
+spring:
+  data:
+    mongodb:
+      username: mongoCentralGateway
+      password: qqq123wer
+      port: 27077
+      database: CENTRAL_GATEWAY
+      authentication-database: admin
+      host: localhost
