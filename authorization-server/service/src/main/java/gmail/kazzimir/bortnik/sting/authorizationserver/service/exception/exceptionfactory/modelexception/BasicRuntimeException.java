@@ -1,16 +1,20 @@
 package gmail.kazzimir.bortnik.sting.authorizationserver.service.exception.exceptionfactory.modelexception;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
 
-public class BasicRuntimeException extends RuntimeException {
-    private HttpStatus status;
+import java.util.HashMap;
+import java.util.Map;
+
+
+public class BasicRuntimeException extends ResponseStatusException {
+    private Map<String, Object> parameters = new HashMap<>();
 
     BasicRuntimeException(HttpStatus status, String message) {
-        super(message);
-        this.status = status;
+        super(status, message);
     }
 
-    public HttpStatus getStatus() {
-        return status;
+    public Map<String, Object> getParameters() {
+        return parameters;
     }
 }

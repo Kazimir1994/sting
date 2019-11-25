@@ -3,7 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/authorization-server/authorization-server.iml" filepath="$PROJECT_DIR$/authorization-server/authorization-server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/central-gateway/central-gateway.iml" filepath="$PROJECT_DIR$/central-gateway/central-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/main-gateway/gateway-repository/gateway-repository.iml" filepath="$PROJECT_DIR$/main-gateway/gateway-repository/gateway-repository.iml" />
+      <module fileurl="file://$PROJECT_DIR$/main-gateway/gateway-server/gateway-server.iml" filepath="$PROJECT_DIR$/main-gateway/gateway-server/gateway-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/main-gateway/gateway-service/gateway-service.iml" filepath="$PROJECT_DIR$/main-gateway/gateway-service/gateway-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/main-gateway/main-gateway.iml" filepath="$PROJECT_DIR$/main-gateway/main-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/authorization-server/repository/repository.iml" filepath="$PROJECT_DIR$/authorization-server/repository/repository.iml" />
       <module fileurl="file://$PROJECT_DIR$/authorization-server/server/server.iml" filepath="$PROJECT_DIR$/authorization-server/server/server.iml" />
       <module fileurl="file://$PROJECT_DIR$/authorization-server/service/service.iml" filepath="$PROJECT_DIR$/authorization-server/service/service.iml" />

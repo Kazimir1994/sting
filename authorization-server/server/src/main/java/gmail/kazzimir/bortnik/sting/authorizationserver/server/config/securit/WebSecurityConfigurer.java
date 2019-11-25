@@ -17,7 +17,6 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
     @Autowired
     public WebSecurityConfigurer(UserDetailsService customUserDetailsService) {
         this.customUserDetailsService = customUserDetailsService;
-
     }
 
     @Override
@@ -36,5 +35,4 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
-
 }

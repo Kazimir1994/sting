@@ -6,23 +6,29 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="service" />
         <module name="telegram-repository" />
+        <module name="gateway-service" />
+        <module name="gateway-repository" />
+        <module name="server" />
         <module name="telegram-server" />
         <module name="repository" />
-        <module name="server" />
-        <module name="central-gateway" />
+        <module name="service" />
+        <module name="gateway-server" />
         <module name="telegram-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="authorization-server" target="1.5" />
-      <module name="central-gateway" target="1.8" />
+      <module name="central-gateway" target="11.0.3" />
+      <module name="gateway-repository" target="11.0.3" />
+      <module name="gateway-server" target="11.0.3" />
+      <module name="gateway-service" target="1.8" />
+      <module name="main-gateway" target="1.5" />
       <module name="repository" target="11.0.3" />
       <module name="server" target="11.0.3" />
       <module name="service" target="11.0.3" />
       <module name="sting" target="1.5" />
-      <module name="telegram-repository" target="1.8" />
+      <module name="telegram-repository" target="11.0.3" />
       <module name="telegram-resource-server" target="1.5" />
       <module name="telegram-server" target="11.0.3" />
       <module name="telegram-service" target="11.0.3" />
@@ -31,6 +37,9 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="central-gateway" options="-parameters" />
+      <module name="gateway-repository" options="-parameters" />
+      <module name="gateway-server" options="-parameters" />
+      <module name="gateway-service" options="-parameters" />
       <module name="repository" options="-parameters" />
       <module name="server" options="-parameters" />
       <module name="service" options="-parameters" />

@@ -5,6 +5,7 @@ import gmail.kazzimir.bortnik.sting.authorizationserver.repository.model.Account
 import gmail.kazzimir.bortnik.sting.authorizationserver.service.UserService;
 import gmail.kazzimir.bortnik.sting.authorizationserver.service.converters.Converter;
 import gmail.kazzimir.bortnik.sting.authorizationserver.service.exception.exceptionfactory.ExceptionFactory;
+
 import gmail.kazzimir.bortnik.sting.authorizationserver.service.exception.exceptionfactory.modelexception.CustomException;
 import gmail.kazzimir.bortnik.sting.authorizationserver.service.exception.exceptionfactory.modelexception.CustomRuntimeException;
 import gmail.kazzimir.bortnik.sting.authorizationserver.service.model.AccountDTO;
@@ -44,7 +45,7 @@ public class UserServiceImpl implements UserService {
         Optional<Account> accountOptional = accountRepository.findByEmail(email);
         Account account = accountOptional.orElseThrow(() ->
                 exceptionFactory.createRuntimeException(
-                        createMessage(ERROR_ACCOUNT_DOES_NOT_EXIST, email), UserServiceImpl.class, HttpStatus.NOT_FOUND
+                        createMessage(ERROR_ACCOUNT_DOES_NOT_EXIST, email), HttpStatus.NOT_FOUND
                 )
         );
         return accountConverter.toDTO(account);
