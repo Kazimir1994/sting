@@ -10,6 +10,7 @@ import gmail.kazzimir.bortnik.sting.maingateway.gatewayservice.exception.excepti
 import org.springframework.cloud.gateway.route.RouteDefinition;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
 import java.util.List;
@@ -31,6 +32,7 @@ public class RouteServiceImpl implements RouteService {
     }
 
     @Override
+    @Transactional
     public Collection<RouteDefinition> getALL() {
         List<Route> allRoute = routeRepository.findAll();
         if (allRoute.isEmpty()) {

@@ -5,7 +5,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: pass
     username: root
-    url: jdbc:mysql://localhost:3306/sting_authorization_server
+    url: jdbc:mysql://localhost:3306/sting_authorization_server?createDatabaseIfNotExist=true
 
   jpa:
     show-sql: true

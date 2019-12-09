@@ -1,7 +1,8 @@
-version: "3.2"
+version: "3.3"
 services:
   db:
     image: mysql:latest
+    restart: always
     container_name: mysql
     ports:
       - 3306:3306
@@ -10,7 +11,7 @@ services:
       - MYSQL_PASSWORD=root
       - MYSQL_ROOT_PASSWORD=pass
     volumes:
-      - ./mysql-data:/var/lib/mysql
+      - my-db:/var/lib/mysql
 
   mongo2:
     image: mongo:latest
@@ -25,4 +26,5 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=qqq123wer
 
 volumes:
+  my-db:
   mongodb_data:
