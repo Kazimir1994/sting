@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.9.RELEASE</version>
+        <version>2.2.1.RELEASE</version>
         <relativePath/>
     </parent>
     <groupId>gmail.kazzimir.bortnik.sting.maingeteway.gatewayrepository</groupId>
@@ -17,8 +17,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>11.0.3</java.version>
-        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+        <java.version>11.0.4</java.version>
+        <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
     </properties>
 
     <dependencies>
@@ -31,7 +31,6 @@
             <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
     </dependencies>
-
 
     <dependencyManagement>
         <dependencies>
