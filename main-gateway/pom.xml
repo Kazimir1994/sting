@@ -9,8 +9,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>gateway-repository</module>
-        <module>gateway-service</module>
-        <module>gateway-server</module>
+        <module>main-gateway-server</module>
+        <module>main-gateway-service</module>
+        <module>main-gateway-repository</module>
     </modules>
 </project>
