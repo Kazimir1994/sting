@@ -5,9 +5,9 @@
     <file url="file://$PROJECT_DIR$/authorization-server/server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/authorization-server/service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gateway" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/gateway/gateway_repository" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/gateway/gateway_server" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/main-gateway/main-gateway-repository" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gateway/gateway-repository" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gateway/gateway-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gateway/gateway-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/main-gateway/main-gateway-repository" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/main-gateway/main-gateway-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/main-gateway/main-gateway-service" charset="UTF-8" />

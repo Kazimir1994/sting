@@ -8,10 +8,11 @@
         <version>2.2.2.RELEASE</version>
         <relativePath/>
     </parent>
+
     <groupId>gmail.kazzimir.bortnik.sting.gateway.gatewayrepository</groupId>
     <artifactId>gateway_repository</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>gateway_repository</name>
+    <version>1.0-SNAPSHOT</version>
+    <name>gateway-repository</name>
     <packaging>jar</packaging>
 
     <properties>

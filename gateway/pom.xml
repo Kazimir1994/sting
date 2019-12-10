@@ -5,13 +5,13 @@
 
     <groupId>gmail.kazzimir.bortnik.sting.gateway</groupId>
     <artifactId>gateway</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
     <name>gateway</name>
     <packaging>pom</packaging>
 
     <modules>
-        <module>gateway_server</module>
-        <module>gateway_service</module>
-        <module>gateway_repository</module>
+        <module>gateway-server</module>
+        <module>gateway-service</module>
+        <module>gateway-repository</module>
     </modules>
 </project>

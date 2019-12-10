@@ -6,27 +6,27 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="main-gateway-server" />
-        <module name="server" />
+        <module name="gateway-service" />
+        <module name="gateway-repository" />
         <module name="main-gateway-repository" />
-        <module name="gateway_repository" />
         <module name="telegram-repository" />
         <module name="telegram-server" />
-        <module name="service" />
-        <module name="main-gateway-service" />
-        <module name="repository" />
-        <module name="gateway_service" />
-        <module name="gateway_server" />
+        <module name="gateway-server" />
         <module name="telegram-service" />
+        <module name="repository" />
+        <module name="main-gateway-service" />
+        <module name="server" />
+        <module name="main-gateway-server" />
+        <module name="service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="authorization-server" target="1.5" />
       <module name="central-gateway" target="11.0.3" />
       <module name="gateway" target="1.5" />
-      <module name="gateway_repository" target="11.0.4" />
-      <module name="gateway_server" target="11.0.4" />
-      <module name="gateway_service" target="1.5" />
+      <module name="gateway-repository" target="11.0.4" />
+      <module name="gateway-server" target="11.0.4" />
+      <module name="gateway-service" target="11.0.4" />
       <module name="main-gateway" target="1.5" />
       <module name="main-gateway-repository" target="11.0.4" />
       <module name="main-gateway-server" target="11.0.4" />
@@ -45,8 +45,9 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="central-gateway" options="-parameters" />
       <module name="gateway" options="" />
-      <module name="gateway_repository" options="-parameters" />
-      <module name="gateway_server" options="-parameters" />
+      <module name="gateway-repository" options="-parameters" />
+      <module name="gateway-server" options="-parameters" />
+      <module name="gateway-service" options="-parameters" />
       <module name="main-gateway-repository" options="-parameters" />
       <module name="main-gateway-server" options="-parameters" />
       <module name="main-gateway-service" options="-parameters" />
