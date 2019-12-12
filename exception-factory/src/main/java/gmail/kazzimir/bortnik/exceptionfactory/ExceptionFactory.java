@@ -1,7 +1,6 @@
-package gmail.kazzimir.bortnik.sting.maingateway.maingatewayservice.exception.exceptionfactory;
+package gmail.kazzimir.bortnik.exceptionfactory;
 
-
-import gmail.kazzimir.bortnik.sting.maingateway.maingatewayservice.exception.exceptionfactory.modelexception.BasicRuntimeException;
+import gmail.kazzimir.bortnik.exceptionfactory.modelexception.BasicRuntimeException;
 import org.springframework.http.HttpStatus;
 
 public interface ExceptionFactory<R extends BasicRuntimeException, E extends Throwable> {

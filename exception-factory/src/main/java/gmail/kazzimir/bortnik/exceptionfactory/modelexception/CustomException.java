@@ -1,4 +1,4 @@
-package gmail.kazzimir.bortnik.sting.authorizationserver.service.exception.exceptionfactory.modelexception;
+package gmail.kazzimir.bortnik.exceptionfactory.modelexception;
 
 public class CustomException extends Exception {
     public CustomException(String message) {

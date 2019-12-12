@@ -11,5 +11,7 @@
         <module>authorization-server</module>
         <module>telegram-resource-server</module>
         <module>main-gateway</module>
+        <module>gateway</module>
+       <module>exception-factory</module>
     </modules>
 </project>

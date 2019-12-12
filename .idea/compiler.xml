@@ -6,23 +6,26 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="gateway-service" />
-        <module name="gateway-repository" />
-        <module name="main-gateway-repository" />
-        <module name="telegram-repository" />
-        <module name="telegram-server" />
         <module name="gateway-server" />
-        <module name="telegram-service" />
-        <module name="repository" />
+        <module name="gateway-service" />
         <module name="main-gateway-service" />
+        <module name="telegram-repository" />
+        <module name="telegram-service" />
         <module name="server" />
+        <module name="telegram-server" />
+        <module name="repository" />
+        <module name="gateway-repository" />
+        <module name="exception-factory" />
+        <module name="main-gateway-repository" />
         <module name="main-gateway-server" />
         <module name="service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="authorization-server" target="1.5" />
-      <module name="central-gateway" target="11.0.3" />
+      <module name="demo" target="1.8" />
+      <module name="exception" target="1.5" />
+      <module name="exception-factory" target="11.0.4" />
       <module name="gateway" target="1.5" />
       <module name="gateway-repository" target="11.0.4" />
       <module name="gateway-server" target="11.0.4" />
@@ -43,8 +46,8 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="central-gateway" options="-parameters" />
-      <module name="gateway" options="" />
+      <module name="demo" options="-parameters" />
+      <module name="exception-factory" options="-parameters" />
       <module name="gateway-repository" options="-parameters" />
       <module name="gateway-server" options="-parameters" />
       <module name="gateway-service" options="-parameters" />

@@ -1,4 +1,4 @@
-package gmail.kazzimir.bortnik.sting.maingateway.maingatewayservice.exception.exceptionfactory.modelexception;
+package gmail.kazzimir.bortnik.exceptionfactory.modelexception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;

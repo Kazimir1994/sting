@@ -1,20 +1,17 @@
-package gmail.kazzimir.bortnik.sting.maingateway.maingatewayservice.exception.configuration;
+package gmail.kazzimir.bortnik.exceptionfactory.settings;
 
-import gmail.kazzimir.bortnik.sting.maingateway.maingatewayservice.exception.exceptionfactory.modelexception.BasicRuntimeException;
+import gmail.kazzimir.bortnik.exceptionfactory.modelexception.BasicRuntimeException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.reactive.error.DefaultErrorAttributes;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.server.ServerRequest;
 
 import java.util.Map;
 
 
-@Configuration
 public class CustomErrorAttributes extends DefaultErrorAttributes {
     private static final Logger logger = LoggerFactory.getLogger(CustomErrorAttributes.class);
 
-    @Override
     public Map<String, Object> getErrorAttributes(ServerRequest request, boolean includeStackTrace) {
         Map<String, Object> errorAttributes = super.getErrorAttributes(request, includeStackTrace);
         Throwable throwable = getError(request);

@@ -33,9 +33,9 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webflux</artifactId>
-            <scope>compile</scope>
+            <groupId>gmail.kazzimir.bortnik.exceptionfactory</groupId>
+            <artifactId>spring-boot-starter-exceptionfactory</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
