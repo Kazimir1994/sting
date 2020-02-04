@@ -37,7 +37,8 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
     @Autowired
     public AuthorizationServerConfigurer(PasswordEncoder passwordEncoder,
                                          AuthenticationManager authenticationManager,
-                                         DataSource dataSource, CustomDefaultAccessTokenConverter customDefaultAccessTokenConverter) {
+                                         DataSource dataSource,
+                                         CustomDefaultAccessTokenConverter customDefaultAccessTokenConverter) {
         this.passwordEncoder = passwordEncoder;
         this.authenticationManager = authenticationManager;
         this.dataSource = dataSource;

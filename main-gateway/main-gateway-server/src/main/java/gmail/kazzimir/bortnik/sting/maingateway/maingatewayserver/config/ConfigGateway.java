@@ -1,40 +1,35 @@
 package gmail.kazzimir.bortnik.sting.maingateway.maingatewayserver.config;
 
-import gmail.kazzimir.bortnik.sting.maingateway.maingatewayservice.RouteService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.gateway.event.RefreshRoutesEvent;
+import org.springframework.cloud.gateway.route.InMemoryRouteDefinitionRepository;
 import org.springframework.cloud.gateway.route.RouteDefinition;
-import org.springframework.cloud.gateway.route.RouteDefinitionRepository;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import java.util.Collection;
 
-@Configuration
-public class ConfigGateway implements RouteDefinitionRepository {
-    private static final Logger logger = LoggerFactory.getLogger(ConfigGateway.class);
-    private final RouteService routeService;
+import java.util.ArrayList;
 
-    public ConfigGateway(RouteService routeService) {
-        this.routeService = routeService;
+@Component
+public class ConfigGateway extends InMemoryRouteDefinitionRepository {
+
+    private final ApplicationEventPublisher publisher;
+
+    @Autowired
+    public ConfigGateway(ApplicationEventPublisher publisher) {
+        new ArrayList<>();
+        this.publisher = publisher;
     }
 
     @Override
     public Flux<RouteDefinition> getRouteDefinitions() {
-        logger.info("Route initialization...");
-        Collection<RouteDefinition> routeDefinitions = routeService.getALL();
-        logger.info("list of routes := {}", routeDefinitions);
-        return Flux.fromIterable(routeDefinitions);
+        return super.getRouteDefinitions();
     }
 
     @Override
     public Mono<Void> save(Mono<RouteDefinition> route) {
-        return null;
+        this.publisher.publishEvent(new RefreshRoutesEvent(this));
+        return super.save(route);
     }
-
-    @Override
-    public Mono<Void> delete(Mono<String> routeId) {
-        return null;
-    }
-
 }

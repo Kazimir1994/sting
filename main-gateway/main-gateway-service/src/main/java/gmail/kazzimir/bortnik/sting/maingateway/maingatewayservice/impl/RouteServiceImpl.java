@@ -25,7 +25,6 @@ public class RouteServiceImpl implements RouteService {
                             Converter<RouteDefinition, Route> converterRoute) {
         this.routeRepository = routeRepository;
         this.converterRoute = converterRoute;
-
     }
 
     @Override

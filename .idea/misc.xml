@@ -4,10 +4,15 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/discoveryserver/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/discovery-server/discovery-server-instance/pom.xml" />
+        <option value="$PROJECT_DIR$/discovery-server/discovery-server-repository/pom.xml" />
+        <option value="$PROJECT_DIR$/discovery-server/discovery-server-service/pom.xml" />
+        <option value="$PROJECT_DIR$/discovery-server/pom.xml" />
         <option value="$PROJECT_DIR$/exception/pom.xml" />
       </set>
     </option>

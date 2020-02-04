@@ -12,11 +12,9 @@ public class ExceptionGeneratorUtils {
         return new CustomRuntimeException(status, messageRuntimeException);
     }
 
-
     public static void createAndThrowRuntimeException(String message, HttpStatus status) {
         throw createRuntimeException(message, status);
     }
-
 
     public static CustomException createException(String message, Class clazz) {
         String messageException = String.format(START_MESSAGE, message);

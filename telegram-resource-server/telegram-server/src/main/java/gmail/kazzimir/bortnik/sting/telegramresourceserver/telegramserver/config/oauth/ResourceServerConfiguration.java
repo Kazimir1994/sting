@@ -22,6 +22,6 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     public void configure(HttpSecurity http) throws Exception {
         http.httpBasic().disable().csrf().disable();
         http.authorizeRequests()
-                .antMatchers("/test").hasAnyAuthority("CONTROL_BeeOOT");
+                .antMatchers("/test").hasAnyAuthority("CONTROL_BOOT");
     }
 }
