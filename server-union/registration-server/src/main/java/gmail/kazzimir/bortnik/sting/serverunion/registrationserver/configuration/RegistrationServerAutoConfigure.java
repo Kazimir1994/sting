@@ -1,5 +1,6 @@
 package gmail.kazzimir.bortnik.sting.serverunion.registrationserver.configuration;
 
+import gmail.kazzimir.bortnik.sting.serverunion.registrationserver.controller.ExceptionHandlers.ServerUnionExceptionHandlers;
 import gmail.kazzimir.bortnik.sting.serverunion.registrationserver.controller.api.ServerUnionController;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
@@ -21,5 +22,10 @@ public class RegistrationServerAutoConfigure {
                 .setReadTimeout(Duration.ofSeconds(3))
                 .setConnectTimeout(Duration.ofSeconds(3))
                 .build();
+    }
+
+    @Bean
+    public ServerUnionExceptionHandlers serverUnionExceptionHandlers() {
+        return new ServerUnionExceptionHandlers();
     }
 }

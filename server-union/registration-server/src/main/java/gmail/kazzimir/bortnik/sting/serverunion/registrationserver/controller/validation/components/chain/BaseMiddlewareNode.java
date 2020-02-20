@@ -1,19 +1,22 @@
 package gmail.kazzimir.bortnik.sting.serverunion.registrationserver.controller.validation.components.chain;
 
-public abstract class BaseMiddlewareNode<T> {
-    private BaseMiddlewareNode<T> baseMiddlewareNode;
+import java.util.Objects;
 
-    public BaseMiddlewareNode<T> linkWith(BaseMiddlewareNode<T> baseMiddlewareNode) {
+public abstract class BaseMiddlewareNode<T, E extends Enum<E>> {
+    private BaseMiddlewareNode<T, E> baseMiddlewareNode;
+
+    public BaseMiddlewareNode<T, E> linkWith(BaseMiddlewareNode<T, E> baseMiddlewareNode) {
         this.baseMiddlewareNode = baseMiddlewareNode;
         return baseMiddlewareNode;
     }
 
-    public abstract boolean check(T object);
+    public abstract WrapperResultNode<T, E> check(WrapperResultNode<T, E> wrapperResultNode);
 
-    protected final boolean checkNext(T object) {
-        if (baseMiddlewareNode == null) {
-            return true;
+    protected WrapperResultNode<T, E> checkNext(WrapperResultNode<T, E> wrapperResultNode) {
+
+        if (Objects.isNull(baseMiddlewareNode)) {
+            return wrapperResultNode;
         }
-        return baseMiddlewareNode.check(object);
+        return baseMiddlewareNode.check(wrapperResultNode);
     }
 }

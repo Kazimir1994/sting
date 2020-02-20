@@ -2,6 +2,8 @@ package gmail.kazzimir.bortnik.sting.serverunion.registrationserver.controller.v
 
 import gmail.kazzimir.bortnik.sting.serverunion.registrationserver.controller.validation.annotation.IpInstanceValidator;
 import gmail.kazzimir.bortnik.sting.serverunion.registrationserver.controller.validation.components.chain.BaseMiddlewareNode;
+import gmail.kazzimir.bortnik.sting.serverunion.registrationserver.controller.validation.components.chain.WrapperResultNode;
+import gmail.kazzimir.bortnik.sting.serverunion.registrationserver.controller.validation.components.chain.ValidationResultNodeMessageEnum;
 import gmail.kazzimir.bortnik.sting.serverunion.registrationserver.controller.validation.components.chain.realization.CheckIpFormMiddlewareNode;
 import gmail.kazzimir.bortnik.sting.serverunion.registrationserver.controller.validation.components.chain.realization.CheckPortFormMiddlewareNode;
 import gmail.kazzimir.bortnik.sting.serverunion.registrationserver.controller.validation.components.chain.realization.VerifyIpAddressAvailabilityMiddlewareNode;
@@ -14,21 +16,22 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 public class IpInstanceValidatorConstraint implements ConstraintValidator<IpInstanceValidator, IpPortDTO> {
-    private BaseMiddlewareNode<IpPortDTO> baseMiddlewareNode;
     private final RestTemplate restTemplate;
 
     @Autowired
     public IpInstanceValidatorConstraint(@Qualifier("restTemplateServerUnion") RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
-        this.baseMiddlewareNode = createValidatorChain();
     }
 
     @Override
     public boolean isValid(IpPortDTO ipPortDTO, ConstraintValidatorContext constraintValidatorContext) {
-        return baseMiddlewareNode.check(ipPortDTO);
+        BaseMiddlewareNode<IpPortDTO, ValidationResultNodeMessageEnum> baseMiddlewareNode = createValidatorChain();
+        WrapperResultNode<IpPortDTO, ValidationResultNodeMessageEnum> resultValid =
+                baseMiddlewareNode.check(new WrapperResultNode<>(ipPortDTO));
+        return false;
     }
 
-    private BaseMiddlewareNode<IpPortDTO> createValidatorChain() {
+    private BaseMiddlewareNode<IpPortDTO, ValidationResultNodeMessageEnum> createValidatorChain() {
         CheckIpFormMiddlewareNode checkIpFormMiddlewareNode = new CheckIpFormMiddlewareNode();
         checkIpFormMiddlewareNode
                 .linkWith(new CheckPortFormMiddlewareNode())

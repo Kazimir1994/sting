@@ -3,7 +3,6 @@ package gmail.kazzimir.bortnik.sting.serverunion.testregistrationserver;
 import gmail.kazzimir.bortnik.sting.serverunion.registrationserver.model.dto.InstanceDTO;
 import gmail.kazzimir.bortnik.sting.serverunion.registrationserver.model.dto.IpPortDTO;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +34,13 @@ public class TestRegistrationIntegrationTest {
     private RestTemplate restTemplateMock;
 
     @Test
+    public void theRequestShouldReturnABadRequest_CheckForEmptyInput() {
+        final String url = "http://localhost:" + randomServerPort + "/api/v1/registration";
+        HttpStatus statusCode = restTemplate.postForEntity(url, null, null).getStatusCode();
+        Assert.assertEquals(statusCode, HttpStatus.UNSUPPORTED_MEDIA_TYPE);
+    }
+
+    @Test
     public void theRequestShouldReturnABadRequest_DoesNotPassValidation() {
         final String url = "http://localhost:" + randomServerPort + "/api/v1/registration";
         HttpStatus statusCode = restTemplate.postForEntity(url, new InstanceDTO(), null).getStatusCode();
@@ -63,11 +69,6 @@ public class TestRegistrationIntegrationTest {
     public void checkValidationOnIpAddress_musNotPassValidation() throws URISyntaxException {
         InstanceDTO instanceDTO = new InstanceDTO();
         IpPortDTO ipPortDTO = new IpPortDTO("123.123.211.123", 2123);
-
-//        mockServer.expect(ExpectedCount.once(),
-//                requestTo(new URI("http://" + ipPortDTO.getIp() + ":" + ipPortDTO.getPort() + "/employee")))
-//                .andExpect(method(HttpMethod.GET))
-//                .andRespond(withStatus(HttpStatus.OK));
 
         final String url = "http://localhost:" + randomServerPort + "/api/v1/registration";
 
