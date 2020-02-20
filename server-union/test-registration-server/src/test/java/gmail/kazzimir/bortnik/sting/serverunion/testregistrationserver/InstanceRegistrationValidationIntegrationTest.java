@@ -31,7 +31,7 @@ import static org.springframework.test.web.client.response.MockRestResponseCreat
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class TestRegistrationIntegrationTest {
+public class InstanceRegistrationValidationIntegrationTest {
     @LocalServerPort
     int randomServerPort;
     @Autowired
