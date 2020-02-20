@@ -2,7 +2,6 @@ package gmail.kazzimir.bortnik.sting.serverunion.registrationserver.controller.v
 
 import gmail.kazzimir.bortnik.sting.serverunion.registrationserver.controller.validation.annotation.IpInstanceValidator;
 import gmail.kazzimir.bortnik.sting.serverunion.registrationserver.controller.validation.components.chain.BaseMiddlewareNode;
-import gmail.kazzimir.bortnik.sting.serverunion.registrationserver.controller.validation.components.chain.WrapperResultNode;
 import gmail.kazzimir.bortnik.sting.serverunion.registrationserver.controller.validation.components.chain.ValidationResultNodeMessageEnum;
 import gmail.kazzimir.bortnik.sting.serverunion.registrationserver.controller.validation.components.chain.realization.CheckIpFormMiddlewareNode;
 import gmail.kazzimir.bortnik.sting.serverunion.registrationserver.controller.validation.components.chain.realization.CheckPortFormMiddlewareNode;
@@ -14,6 +13,7 @@ import org.springframework.web.client.RestTemplate;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
+import java.util.Objects;
 
 public class IpInstanceValidatorConstraint implements ConstraintValidator<IpInstanceValidator, IpPortDTO> {
     private final RestTemplate restTemplate;
@@ -26,8 +26,12 @@ public class IpInstanceValidatorConstraint implements ConstraintValidator<IpInst
     @Override
     public boolean isValid(IpPortDTO ipPortDTO, ConstraintValidatorContext constraintValidatorContext) {
         BaseMiddlewareNode<IpPortDTO, ValidationResultNodeMessageEnum> baseMiddlewareNode = createValidatorChain();
-        WrapperResultNode<IpPortDTO, ValidationResultNodeMessageEnum> resultValid =
-                baseMiddlewareNode.check(new WrapperResultNode<>(ipPortDTO));
+        ValidationResultNodeMessageEnum check = baseMiddlewareNode.check(ipPortDTO);
+        if (Objects.isNull(check)) {
+            return true;
+        }
+        constraintValidatorContext.disableDefaultConstraintViolation();
+        constraintValidatorContext.buildConstraintViolationWithTemplate(check.toString()).addConstraintViolation();
         return false;
     }
 

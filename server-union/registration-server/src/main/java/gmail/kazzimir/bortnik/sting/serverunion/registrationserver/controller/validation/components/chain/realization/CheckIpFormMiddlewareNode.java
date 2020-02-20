@@ -17,19 +17,34 @@ public class CheckIpFormMiddlewareNode extends BaseMiddlewareNode<IpPortDTO, Val
     private static final Logger logger = LoggerFactory.getLogger(CheckIpFormMiddlewareNode.class);
 
     @Override
-    public WrapperResultNode<IpPortDTO, ValidationResultNodeMessageEnum> check(WrapperResultNode<IpPortDTO, ValidationResultNodeMessageEnum> wrapperResultNode) {
-        logger.info(CheckIpFormMiddlewareNode.class.getName() + " :-> {}", wrapperResultNode.getObjectValidations());
-        if (Objects.nonNull(wrapperResultNode.getObjectValidations())) {
-            String ip = wrapperResultNode.getObjectValidations().getIp();
+    public ValidationResultNodeMessageEnum check(IpPortDTO ipPortDTO) {
+        logger.info(CheckIpFormMiddlewareNode.class.getName() + " :-> {}", ipPortDTO);
+        if (Objects.nonNull(ipPortDTO)) {
+            String ip = ipPortDTO.getIp();
             boolean ipIsValid = ip.matches(REGEX_IP);
             if (ipIsValid) {
-                return checkNext(wrapperResultNode);
+                return checkNext(ipPortDTO);
             } else {
-                wrapperResultNode.add(NOT_MATCH);
-                return wrapperResultNode;
+                return NOT_MATCH;
             }
         }
-        wrapperResultNode.add(NULL);
-        return wrapperResultNode;
+        return NULL;
     }
+
+//    @Override
+//    public WrapperResultNode<IpPortDTO, ValidationResultNodeMessageEnum> check(WrapperResultNode<IpPortDTO, ValidationResultNodeMessageEnum> wrapperResultNode) {
+//        logger.info(CheckIpFormMiddlewareNode.class.getName() + " :-> {}", wrapperResultNode.getObjectValidations());
+//        if (Objects.nonNull(wrapperResultNode.getObjectValidations())) {
+//            String ip = wrapperResultNode.getObjectValidations().getIp();
+//            boolean ipIsValid = ip.matches(REGEX_IP);
+//            if (ipIsValid) {
+//                return checkNext(wrapperResultNode);
+//            } else {
+//                wrapperResultNode.add(NOT_MATCH);
+//                return wrapperResultNode;
+//            }
+//        }
+//        wrapperResultNode.add(NULL);
+//        return wrapperResultNode;
+//    }
 }

@@ -2,6 +2,7 @@ package gmail.kazzimir.bortnik.sting.serverunion.registrationserver.controller.E
 
 import gmail.kazzimir.bortnik.sting.serverunion.registrationserver.controller.api.ServerUnionController;
 import gmail.kazzimir.bortnik.sting.serverunion.registrationserver.controller.validation.model.ValidationErrorResponse;
+import gmail.kazzimir.bortnik.sting.serverunion.registrationserver.controller.validation.model.Violation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -32,15 +33,15 @@ public class ServerUnionExceptionHandlers {
     public ValidationErrorResponse handleValidationExceptions(MethodArgumentNotValidException ex) {
         logger.info("Error:= {} ", ex.getMessage());
         ValidationErrorResponse error = new ValidationErrorResponse();
-        List<ValidationErrorResponse.Violation> listErrors = ex.getBindingResult().getFieldErrors().stream()
+        List<Violation> listErrors = ex.getBindingResult().getFieldErrors().stream()
                 .map(fieldError -> buildViolation(fieldError.getField(), fieldError.getDefaultMessage()))
                 .collect(Collectors.toList());
         error.setViolations(listErrors);
         return error;
     }
 
-    private ValidationErrorResponse.Violation buildViolation(String Field, String message) {
-        return new ValidationErrorResponse.Violation(Field, message);
+    private Violation buildViolation(String Field, String message) {
+        return new Violation(Field, message);
     }
 //    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 //    @ExceptionHandler(ConstraintViolationException.class)

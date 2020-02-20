@@ -2,6 +2,7 @@ package gmail.kazzimir.bortnik.sting.serverunion.registrationserver.controller.v
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ValidationErrorResponse {
     private List<Violation> violations = new ArrayList<>();
@@ -14,23 +15,27 @@ public class ValidationErrorResponse {
         this.violations = violations;
     }
 
-    public static class Violation {
+    public void add(Violation violation) {
+        violations.add(violation);
+    }
 
-        private final String fieldName;
+    @Override
+    public String toString() {
+        return "ValidationErrorResponse{" +
+                "violations=" + violations +
+                '}';
+    }
 
-        private final String message;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ValidationErrorResponse that = (ValidationErrorResponse) o;
+        return Objects.equals(violations, that.violations);
+    }
 
-        public Violation(String fieldName, String message) {
-            this.fieldName = fieldName;
-            this.message = message;
-        }
-
-        public String getFieldName() {
-            return fieldName;
-        }
-
-        public String getMessage() {
-            return message;
-        }
+    @Override
+    public int hashCode() {
+        return Objects.hash(violations);
     }
 }

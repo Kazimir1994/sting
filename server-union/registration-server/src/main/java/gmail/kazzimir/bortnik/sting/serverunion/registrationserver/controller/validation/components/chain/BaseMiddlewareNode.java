@@ -2,21 +2,20 @@ package gmail.kazzimir.bortnik.sting.serverunion.registrationserver.controller.v
 
 import java.util.Objects;
 
-public abstract class BaseMiddlewareNode<T, E extends Enum<E>> {
-    private BaseMiddlewareNode<T, E> baseMiddlewareNode;
+public abstract class BaseMiddlewareNode<ObjectValidations, ValidationResultNode> {
+    private BaseMiddlewareNode<ObjectValidations, ValidationResultNode> baseMiddlewareNode;
 
-    public BaseMiddlewareNode<T, E> linkWith(BaseMiddlewareNode<T, E> baseMiddlewareNode) {
+    public BaseMiddlewareNode<ObjectValidations, ValidationResultNode> linkWith(BaseMiddlewareNode<ObjectValidations, ValidationResultNode> baseMiddlewareNode) {
         this.baseMiddlewareNode = baseMiddlewareNode;
         return baseMiddlewareNode;
     }
 
-    public abstract WrapperResultNode<T, E> check(WrapperResultNode<T, E> wrapperResultNode);
+    public abstract ValidationResultNode check(ObjectValidations objectValidations);
 
-    protected WrapperResultNode<T, E> checkNext(WrapperResultNode<T, E> wrapperResultNode) {
-
+    protected ValidationResultNode checkNext(ObjectValidations objectValidations) {
         if (Objects.isNull(baseMiddlewareNode)) {
-            return wrapperResultNode;
+            return null;
         }
-        return baseMiddlewareNode.check(wrapperResultNode);
+        return baseMiddlewareNode.check(objectValidations);
     }
 }
