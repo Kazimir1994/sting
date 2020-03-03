@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>gmail.kazzimir.bortnik.sting.gateway.gatewayrepository</groupId>
-    <artifactId>gateway_repository</artifactId>
+    <artifactId>gateway-repository</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>gateway-repository</name>
     <packaging>jar</packaging>

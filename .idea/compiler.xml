@@ -6,20 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="exception-factory" />
-        <module name="gateway-service" />
+        <module name="gateway-server" />
+        <module name="test-registration-server" />
+        <module name="client-server" />
+        <module name="spring-boot-starter-exception-factory" />
         <module name="main-gateway-service" />
         <module name="main-gateway-repository" />
+        <module name="gateway-service" />
         <module name="telegram-repository" />
-        <module name="gateway-server" />
+        <module name="registration-server" />
         <module name="test-client-server" />
         <module name="telegram-service" />
         <module name="server" />
         <module name="telegram-server" />
-        <module name="registration-server" />
-        <module name="client-server" />
         <module name="gateway-repository" />
-        <module name="test-registration-server" />
         <module name="repository" />
         <module name="main-gateway-server" />
         <module name="service" />
@@ -28,14 +28,6 @@
     <bytecodeTargetLevel>
       <module name="authorization-server" target="1.5" />
       <module name="client-server" target="1.5" />
-      <module name="demo" target="1.8" />
-      <module name="discovery-server" target="1.5" />
-      <module name="discovery-server-instance" target="1.8" />
-      <module name="discovery-server-repository" target="1.5" />
-      <module name="discovery-server-service" target="1.8" />
-      <module name="discovery_server" target="1.5" />
-      <module name="exception" target="1.5" />
-      <module name="exception-factory" target="11.0.4" />
       <module name="gateway" target="1.5" />
       <module name="gateway-repository" target="11.0.4" />
       <module name="gateway-server" target="11.0.4" />
@@ -49,6 +41,7 @@
       <module name="server" target="11.0.4" />
       <module name="server-union" target="1.5" />
       <module name="service" target="11.0.3" />
+      <module name="spring-boot-starter-exception-factory" target="11.0.4" />
       <module name="sting" target="1.5" />
       <module name="telegram-repository" target="11.0.4" />
       <module name="telegram-resource-server" target="1.5" />
@@ -60,10 +53,6 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="demo" options="-parameters" />
-      <module name="discovery-server-instance" options="-parameters" />
-      <module name="discovery-server-service" options="-parameters" />
-      <module name="exception-factory" options="-parameters" />
       <module name="gateway-repository" options="-parameters" />
       <module name="gateway-server" options="-parameters" />
       <module name="gateway-service" options="-parameters" />
@@ -74,6 +63,7 @@
       <module name="repository" options="-parameters" />
       <module name="server" options="-parameters" />
       <module name="service" options="-parameters" />
+      <module name="spring-boot-starter-exception-factory" options="-parameters" />
       <module name="telegram-repository" options="-parameters" />
       <module name="telegram-server" options="-parameters" />
       <module name="telegram-service" options="-parameters" />

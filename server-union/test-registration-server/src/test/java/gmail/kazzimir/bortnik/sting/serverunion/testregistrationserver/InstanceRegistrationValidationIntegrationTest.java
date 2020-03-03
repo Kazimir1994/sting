@@ -49,7 +49,9 @@ public class InstanceRegistrationValidationIntegrationTest {
     @Test
     public void theRequestShouldReturnABadRequest_DoesNotPassValidation_IPMustNotBeNull() {
         final String url = "http://localhost:" + randomServerPort + "/api/v1/registration";
-        ResponseEntity<ValidationErrorResponse> stringResponseEntity = restTemplateMock.postForEntity(url, new InstanceDTO(), ValidationErrorResponse.class);
+        ResponseEntity<ValidationErrorResponse> stringResponseEntity =
+                restTemplateMock.postForEntity(url, new InstanceDTO(), ValidationErrorResponse.class);
+
         ValidationErrorResponse validationErrorResponse = Objects.requireNonNull(stringResponseEntity.getBody());
 
         ValidationErrorResponse validationErrorResponseTest = new ValidationErrorResponse();
@@ -67,7 +69,9 @@ public class InstanceRegistrationValidationIntegrationTest {
         instanceDTO.setIpPortDTO(ipPortDTO);
 
         final String url = "http://localhost:" + randomServerPort + "/api/v1/registration";
-        ResponseEntity<ValidationErrorResponse> stringResponseEntity = restTemplateMock.postForEntity(url, instanceDTO, ValidationErrorResponse.class);
+        ResponseEntity<ValidationErrorResponse> stringResponseEntity
+                = restTemplateMock.postForEntity(url, instanceDTO, ValidationErrorResponse.class);
+
         ValidationErrorResponse validationErrorResponse = Objects.requireNonNull(stringResponseEntity.getBody());
 
         ValidationErrorResponse validationErrorResponseTest = new ValidationErrorResponse();
@@ -85,7 +89,9 @@ public class InstanceRegistrationValidationIntegrationTest {
         instanceDTO.setIpPortDTO(ipPortDTO);
 
         final String url = "http://localhost:" + randomServerPort + "/api/v1/registration";
-        ResponseEntity<ValidationErrorResponse> stringResponseEntity = restTemplateMock.postForEntity(url, instanceDTO, ValidationErrorResponse.class);
+        ResponseEntity<ValidationErrorResponse> stringResponseEntity
+                = restTemplateMock.postForEntity(url, instanceDTO, ValidationErrorResponse.class);
+
         ValidationErrorResponse validationErrorResponse = Objects.requireNonNull(stringResponseEntity.getBody());
 
         ValidationErrorResponse validationErrorResponseTest = new ValidationErrorResponse();
@@ -103,7 +109,9 @@ public class InstanceRegistrationValidationIntegrationTest {
         instanceDTO.setIpPortDTO(ipPortDTO);
 
         final String url = "http://localhost:" + randomServerPort + "/api/v1/registration";
-        ResponseEntity<ValidationErrorResponse> stringResponseEntity = restTemplateMock.postForEntity(url, instanceDTO, ValidationErrorResponse.class);
+        ResponseEntity<ValidationErrorResponse> stringResponseEntity
+                = restTemplateMock.postForEntity(url, instanceDTO, ValidationErrorResponse.class);
+
         ValidationErrorResponse validationErrorResponse = Objects.requireNonNull(stringResponseEntity.getBody());
 
         ValidationErrorResponse validationErrorResponseTest = new ValidationErrorResponse();

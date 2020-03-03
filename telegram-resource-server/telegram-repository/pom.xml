@@ -10,8 +10,8 @@
         <relativePath/>
     </parent>
     <groupId>gmail.kazzimir.bortnik.sting.telegramresourceserver.telegramrepository</groupId>
-    <artifactId>telegram_repository</artifactId>
-    <name>telegram_resource_server-repository</name>
+    <artifactId>telegram-repository</artifactId>
+    <name>telegram-resource-server-repository</name>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 

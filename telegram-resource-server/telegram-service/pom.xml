@@ -11,7 +11,7 @@
     </parent>
     <groupId>gmail.kazzimir.bortnik.sting.telegramresourceserver.telegramservice</groupId>
     <artifactId>telegram-service</artifactId>
-    <name>telegram_resource_server-service</name>
+    <name>telegram-resource-server-service</name>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -28,7 +28,7 @@
         </dependency>
         <dependency>
             <groupId>gmail.kazzimir.bortnik.sting.telegramresourceserver.telegramrepository</groupId>
-            <artifactId>telegram_repository</artifactId>
+            <artifactId>telegram-repository</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>

@@ -34,7 +34,7 @@
         </dependency>
         <dependency>
             <groupId>gmail.kazzimir.bortnik.exceptionfactory</groupId>
-            <artifactId>spring-boot-starter-exceptionfactory</artifactId>
+            <artifactId>spring-boot-starter-exception-factory</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

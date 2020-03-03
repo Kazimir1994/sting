@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>gmail.kazzimir.bortnik.sting.maingateway.maingatewayservice</groupId>
-    <artifactId>main_gateway_service</artifactId>
+    <artifactId>main-gateway-service</artifactId>
     <name>main-gateway-service</name>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -24,12 +24,12 @@
     <dependencies>
         <dependency>
             <groupId>gmail.kazzimir.bortnik.sting.maingateway.maingatewayrepository</groupId>
-            <artifactId>main_gateway_repository</artifactId>
+            <artifactId>main-gateway-repository</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>gmail.kazzimir.bortnik.exceptionfactory</groupId>
-            <artifactId>spring-boot-starter-exceptionfactory</artifactId>
+            <artifactId>spring-boot-starter-exception-factory</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

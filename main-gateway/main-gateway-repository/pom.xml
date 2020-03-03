@@ -10,7 +10,7 @@
         <relativePath/>
     </parent>
     <groupId>gmail.kazzimir.bortnik.sting.maingateway.maingatewayrepository</groupId>
-    <artifactId>main_gateway_repository</artifactId>
+    <artifactId>main-gateway-repository</artifactId>
     <name>main-gateway-repository</name>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>

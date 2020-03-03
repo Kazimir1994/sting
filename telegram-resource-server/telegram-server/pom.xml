@@ -11,7 +11,7 @@
     </parent>
     <groupId>gmail.kazzimir.bortnik.sting.telegramresourceserver.telegramserver</groupId>
     <artifactId>telegram-server</artifactId>
-    <name>telegram_resource_server-server</name>
+    <name>telegram-resource-server-server</name>
     <packaging>jar</packaging>
 
     <properties>

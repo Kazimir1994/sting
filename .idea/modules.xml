@@ -4,8 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/authorization-server/authorization-server.iml" filepath="$PROJECT_DIR$/authorization-server/authorization-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/server-union/client-server/client-server.iml" filepath="$PROJECT_DIR$/server-union/client-server/client-server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/discovery-server/discovery-server.iml" filepath="$PROJECT_DIR$/discovery-server/discovery-server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/exception-factory/exception-factory.iml" filepath="$PROJECT_DIR$/exception-factory/exception-factory.iml" />
       <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/gateway/gateway-repository/gateway-repository.iml" filepath="$PROJECT_DIR$/gateway/gateway-repository/gateway-repository.iml" />
       <module fileurl="file://$PROJECT_DIR$/gateway/gateway-server/gateway-server.iml" filepath="$PROJECT_DIR$/gateway/gateway-server/gateway-server.iml" />
@@ -19,6 +17,7 @@
       <module fileurl="file://$PROJECT_DIR$/authorization-server/server/server.iml" filepath="$PROJECT_DIR$/authorization-server/server/server.iml" />
       <module fileurl="file://$PROJECT_DIR$/server-union/server-union.iml" filepath="$PROJECT_DIR$/server-union/server-union.iml" />
       <module fileurl="file://$PROJECT_DIR$/authorization-server/service/service.iml" filepath="$PROJECT_DIR$/authorization-server/service/service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-starter-exception-factory/spring-boot-starter-exception-factory.iml" filepath="$PROJECT_DIR$/spring-boot-starter-exception-factory/spring-boot-starter-exception-factory.iml" />
       <module fileurl="file://$PROJECT_DIR$/sting.iml" filepath="$PROJECT_DIR$/sting.iml" />
       <module fileurl="file://$PROJECT_DIR$/telegram-resource-server/telegram-repository/telegram-repository.iml" filepath="$PROJECT_DIR$/telegram-resource-server/telegram-repository/telegram-repository.iml" />
       <module fileurl="file://$PROJECT_DIR$/telegram-resource-server/telegram-resource-server.iml" filepath="$PROJECT_DIR$/telegram-resource-server/telegram-resource-server.iml" />
